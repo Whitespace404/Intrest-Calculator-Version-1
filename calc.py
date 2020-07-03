@@ -5,22 +5,28 @@ root = Tk()
 root.title('Intrest Calculator')
 root.configure(background='black')
 messagebox.showinfo("Information", """What unit should I use?
-        
-1. Enter the principal in any currency, 
-you'll get the answer in the same 
+
+1. Enter the principal in any currency,
+you'll get the answer in the same
 currency.
 
 2. Enter the time in years
 
-3. Enter the rate of interest in 
+3. Enter the rate of interest in
 percentage.""")
 
 # Defining functions
 def intrest_calculator(p, t, r):
+    """
+Returns simple interest
+    """
     return (p * t * r) / 100
 
 
 def Submit():
+"""
+Creates final window with interest displayed
+"""
     try:
         int_ = intrest_calculator(int(principal.get()), int(time.get()), int(rate.get()))
         display_value = f'{principal.get()} becomes {int(int_) + int(principal.get())} after {time.get()} years at a rate of {rate.get()}%'
